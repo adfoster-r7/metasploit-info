@@ -1,0 +1,101 @@
+# Extracts all module information so that it can be extracted for use within documentation.
+# The information can be extracted with the following command:
+#     ./msfconsole --quiet --no-database --resource ./extract_module_metadata.rc --execute-command 'exit'
+# Each module will have its metadata extracted to a corresponding folder that matches the same structure in `modules`
+# TODO: Confirm why `framework.modules.to_a.size != JSON.parse(File.read("./db/modules_metadata_base.json")).size`, `4061 != 4067`
+
+<ruby>
+
+require 'fileutils'
+
+# TODO: Investigate why calling "create" on most modules takes a minimum of 0.3 seconds
+# Metasploit::Framework::Profiler.record_cpu do
+#   framework.modules.create("windows/applocker_evasion_regasm_regsvcs")
+# end
+
+def record_time
+  starting = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+  result = yield
+  ending = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+  elapsed = ending - starting
+  [result, elapsed]
+end
+
+output_path = File.join(Msf::Config.install_root, 'tmp', 'module_metadata.json')
+File.delete(output_path) if File.exist?(output_path)
+
+STDERR.puts 'Reloading all modules for faster extraction...'
+framework.modules.reload_modules
+
+STDERR.puts 'Starting module extraction'
+index = 0
+
+_, total_time = record_time do
+  STDERR.puts 'Extracting module paths'
+  module_paths, module_paths_timing = record_time { framework.modules.to_a }
+  #STDERR.puts "Extracted module paths in #{module_paths_timing}"
+
+  modules_metadata = module_paths.map do |module_path, _module_class|
+    index += 1
+    # STDERR.puts "#{index} - #{module_path}"
+    mod, elapsed = record_time { framework.modules.create(module_path) }
+    # STDERR.puts "#{index} - #{module_path}, time taken: #{elapsed}, #{mod.type}"
+
+    options = mod.options.values.map do |option|
+      {
+        type: option.type,
+        name: option.name,
+        required: option.required,
+        default: option.default.to_s,
+        aliases: option.aliases,
+        advanced: option.advanced,
+        evasion: option.evasion,
+        description: option.desc
+      }
+    end
+
+    {
+      name: mod.name.dup.force_encoding("UTF-8"),
+      fullname: mod.realname.dup.force_encoding("UTF-8"),
+      aliases: mod.aliases,
+      rank: mod.rank,
+      disclosure_date: mod.disclosure_date.nil? ? nil : mod.disclosure_date.to_s,
+      type: mod.type,
+      author: mod.author.map { |x| x.to_s.force_encoding("UTF-8") },
+      description: mod.description.to_s.strip.force_encoding("UTF-8"),
+      references: mod.references,
+      platform: mod.platform_to_s,
+      arch: mod.arch_to_s,
+      autofilter_ports: (
+          mod.respond_to?(:autofilter_ports) ? mod.autofilter_ports : nil
+        ),
+      autofilter_services: (
+          mod.respond_to?(:autofilter_services) ? mod.autofilter_services : nil
+        ),
+      targets: (
+          (mod.respond_to?(:targets) && mod.targets) ? mod.targets.map(&:name) : nil
+        ),
+      path: mod.file_path.sub(/^#{Msf::Config.install_root}/, ''),
+      ref_name: mod.class.refname,
+      check: mod.has_check?,
+      postAuth: mod.post_auth?,
+      default_credential: mod.default_cred?,
+      notes: mod.notes,
+      needs_cleanup: (
+          mod.respond_to?(:needs_cleanup?) ? mod.needs_cleanup? : nil
+        ),
+      options: options
+    }
+  end
+
+  File.open(output_path, mode: 'w') do |output_file|
+    result = JSON.pretty_generate(modules_metadata)
+    # STDERR.puts "Writing results:"
+    # STDOUT.puts result
+    output_file.write(result)
+  end
+end
+
+STDERR.puts "The total time was: #{total_time}"
+STDERR.puts "Results: #{output_path}"
+</ruby>
