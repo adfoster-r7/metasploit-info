@@ -1,7 +1,7 @@
 name: Module information
 
 on:
-#  workflow_dispatch:
+  workflow_dispatch: {}
   push:
     branches-ignore:
       - gh-pages
