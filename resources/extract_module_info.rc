@@ -30,6 +30,10 @@ framework.modules.reload_modules
 STDERR.puts 'Starting module extraction'
 index = 0
 
+def sort_platform_string(string)
+  string.split(',').each(&:strip!).sort.join(',')
+end
+
 _, total_time = record_time do
   STDERR.puts 'Extracting module paths'
   module_paths, module_paths_timing = record_time { framework.modules.to_a }
@@ -64,7 +68,7 @@ _, total_time = record_time do
       author: mod.author.map { |x| x.to_s.force_encoding("UTF-8") },
       description: mod.description.to_s.strip.force_encoding("UTF-8"),
       references: mod.references,
-      platform: mod.platform_to_s,
+      platform: sort_platform_string(mod.platform_to_s),
       arch: mod.arch_to_s,
       autofilter_ports: (
           mod.respond_to?(:autofilter_ports) ? mod.autofilter_ports : nil
