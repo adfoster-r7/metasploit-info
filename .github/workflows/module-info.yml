@@ -34,6 +34,8 @@ jobs:
           - 2.7
         info_cmd:
           - >-
+            set -euxo pipefail;
+
             cd metasploit-framework;
             mkdir tmp;
             bundle exec ./msfconsole --resource ../metasploit-info/resources/extract_module_info.rc --quiet --execute-command 'quit';

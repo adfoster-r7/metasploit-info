@@ -41,7 +41,7 @@ _, total_time = record_time do
     mod, elapsed = record_time { framework.modules.create(module_path) }
     # STDERR.puts "#{index} - #{module_path}, time taken: #{elapsed}, #{mod.type}"
 
-    options = mod.options.values.map do |option|
+    options = mod.options.values.sort_by(&:name).map do |option|
       {
         type: option.type,
         name: option.name,
