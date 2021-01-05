@@ -6,9 +6,8 @@ on:
     branches-ignore:
       - gh-pages
       - metakitty
-  pull_request:
-    branches:
-      - '*'
+  schedule:
+    - cron:  '0 18 * * *'
 
 jobs:
   build:
