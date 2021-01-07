@@ -38,7 +38,7 @@ jobs:
 
             cd metasploit-framework;
             mkdir tmp;
-            bundle exec ./msfconsole --resource ../metasploit-info/resources/extract_module_info.rc --quiet --execute-command 'quit';
+            bundle exec ./msfconsole --quiet --no-database --resource ../metasploit-info/resources/extract_module_info.rc --execute-command 'quit';
 
             cd ..;
             cp ./metasploit-framework/tmp/module_metadata.json ./metasploit-info/info/module_metadata.json;

@@ -1,0 +1,144 @@
+name: Metasploit wrapups
+
+on:
+  workflow_dispatch:
+    inputs:
+      startTag:
+        description: 'Start tag'
+        required: true
+        default: '6.0.20'
+      endTag:
+        description: 'End tag'
+        required: true
+        default: '6.0.21'
+  push:
+    branches-ignore:
+      - gh-pages
+      - metakitty
+  schedule:
+    - cron:  '0 18 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-16.04
+    timeout-minutes: 40
+
+    services:
+      postgres:
+        image: postgres:9.6
+        ports: ["5432:5432"]
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    strategy:
+      fail-fast: true
+      matrix:
+        ruby:
+          - 2.7
+        info_cmd:
+          - >-
+            set -euxo pipefail;
+
+            cd metasploit-framework;
+            mkdir tmp;
+            bundle exec ./msfconsole --quiet --no-database --resource ../metasploit-info/resources/extract_module_info.rc --execute-command 'quit';
+
+            cd ..;
+            cp ./metasploit-framework/tmp/module_metadata.json ./metasploit-info/info/module_metadata.json;
+
+    env:
+      RAILS_ENV: test
+
+    name: Ruby ${{ matrix.ruby }} - ${{ matrix.test_cmd }}
+    steps:
+
+#      - name: Install system dependencies
+#        run: sudo apt-get install libpcap-dev graphviz
+#
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          path: metasploit-info
+
+      - name: Generate change logs
+        run: |
+          echo "Release notes for ${{ github.event.inputs.startTag }} to ${{ github.event.inputs.endTag }}" > wrapup.html
+
+      - name: Upload Change log
+        uses: actions/upload-artifact@v2
+        with:
+          name: wrapup-${{ github.event.inputs.startTag }}-to-${{ github.event.inputs.endTag }}
+          path: wrapup.html
+          retention-days: 1
+#
+#      - name: ${{ matrix.test_cmd }}
+#        run: |
+#          echo "${CMD}"
+#          bash -c "${cmd}"
+#        env:
+#          CMD: ${{ matrix.test_cmd }}
+#
+#      - name: Checkout metasploit-framework code
+#        uses: actions/checkout@v2
+#        with:
+#          repository: rapid7/metasploit-framework
+#          path: metasploit-framework
+#
+#      - uses: actions/setup-ruby@v1
+#        with:
+#          ruby-version: ${{ matrix.ruby }}
+#
+#      - name: Setup bundler
+#        run: |
+#          gem install bundler
+#
+#      - uses: actions/cache@v2
+#        with:
+#          path: vendor/bundle
+#          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+#          restore-keys: |
+#            ${{ runner.os }}-gems-
+#
+#      - name: Bundle install
+#        run: |
+#          cd metasploit-framework
+#          bundle config path vendor/bundle
+#          bundle install --jobs 4 --retry 3
+#        env:
+#          BUNDLER_WITHOUT: coverage development pcap
+#
+#      - name: Create database
+#        run: |
+#          cd metasploit-framework
+#          cp config/database.yml.github_actions config/database.yml
+#          bundle exec rake --version
+#          bundle exec rake db:create
+#          bundle exec rake db:migrate
+#          # fail build if db/schema.rb update is not committed
+#          git diff --exit-code db/schema.rb
+#
+#      - name: ${{ matrix.info_cmd }}
+#        run: |
+#          echo "${CMD}"
+#          bash -c "${CMD}"
+#        env:
+#          CMD: ${{ matrix.info_cmd }}
+#
+#      - name: Commit
+#        uses: EndBug/add-and-commit@v6
+#        with:
+#          add: './info'
+#          author_name: Metasploit Github Actions
+#          author_email: do-not-contact@example.com
+#          branch: master
+#          cwd: './metasploit-info'
+#          message: 'Update module information'
+#          signoff: false
+#          push: true
+#          token: ${{ secrets.GITHUB_TOKEN }}
