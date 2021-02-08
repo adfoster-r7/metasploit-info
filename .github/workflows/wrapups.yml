@@ -15,8 +15,8 @@ on:
     branches-ignore:
       - gh-pages
       - metakitty
-  schedule:
-    - cron:  '0 18 * * *'
+  #schedule:
+  #  - cron:  '0 18 * * *'
 
 jobs:
   build:
