@@ -1,0 +1,552 @@
+[
+  {
+    "name": "Grafana 2.0 through 5.2.2 authentication bypass for LDAP and OAuth",
+    "path": "auxiliary/admin/http/grafana_auth_bypass",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-15727/"
+    ],
+    "target": "-",
+    "credentials": "-",
+    "port": "Required",
+    "url": "-"
+  },
+  {
+    "name": "\"Cablehaunt\" Cable Modem WebSocket DoS",
+    "path": "auxiliary/dos/http/cable_haunt_websocket_dos",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-19494/"
+    ],
+    "target": "-",
+    "credentials": "Required",
+    "port": "Required",
+    "url": "-"
+  },
+  {
+    "name": "Microsoft Windows DNSAPI.dll LLMNR Buffer Underrun DoS",
+    "path": "auxiliary/dos/windows/llmnr/ms11_030_dnsapi",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2011-0657/"
+    ],
+    "target": "-",
+    "credentials": "-",
+    "port": "Required",
+    "url": "-"
+  },
+  {
+    "name": "General Electric D20 Password Recovery",
+    "path": "auxiliary/gather/d20pass",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2012-6663/"
+    ],
+    "target": "-",
+    "credentials": "-",
+    "port": "Required",
+    "url": "-"
+  },
+  {
+    "name": "Huawei Datacard Information Disclosure Vulnerability",
+    "path": "auxiliary/gather/huawei_wifi_info",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-6031/"
+    ],
+    "target": "-",
+    "credentials": "-",
+    "port": "Required",
+    "url": "-"
+  },
+  {
+    "name": "Linksys WRT54 Access Point apply.cgi Buffer Overflow",
+    "path": "exploit/linux/http/linksys_apply_cgi",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2005-2799/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "Required",
+    "url": "-"
+  },
+  {
+    "name": "Hak5 WiFi Pineapple Preconfiguration Command Injection",
+    "path": "exploit/linux/http/pineapple_bypass_cmdinject",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-4624/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "Required",
+    "url": "Required"
+  },
+  {
+    "name": "Hak5 WiFi Pineapple Preconfiguration Command Injection",
+    "path": "exploit/linux/http/pineapple_preconfig_cmdinject",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-4624/"
+    ],
+    "target": "Required",
+    "credentials": "Required",
+    "port": "Required",
+    "url": "Required"
+  },
+  {
+    "name": "Malicious Git and Mercurial HTTP Server For CVE-2014-9390",
+    "path": "exploit/multi/http/git_client_command_exec",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-9390/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Malicious Git HTTP Server For CVE-2017-1000117",
+    "path": "exploit/multi/http/git_submodule_command_exec",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-1000117/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Malicious Git HTTP Server For CVE-2018-17456",
+    "path": "exploit/multi/http/git_submodule_url_exec",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-17456/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Wireshark LWRES Dissector getaddrsbyname_request Buffer Overflow (loop)",
+    "path": "exploit/multi/misc/wireshark_lwres_getaddrbyname_loop",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2010-0304/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "Required",
+    "url": "-"
+  },
+  {
+    "name": "MacOS X QuickTime RTSP Content-Type Overflow",
+    "path": "exploit/osx/rtsp/quicktime_rtsp_content_type",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2007-6166/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Clickjacking Vulnerability In CSRF Error Page pfSense",
+    "path": "exploit/unix/http/pfsense_clickjacking",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-1000479/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "Required"
+  },
+  {
+    "name": "tnftp \"savefile\" Arbitrary Command Execution",
+    "path": "exploit/unix/http/tnftp_savefile",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-8517/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "AbsoluteFTP 1.9.6 - 2.2.10 LIST Command Remote Buffer Overflow",
+    "path": "exploit/windows/ftp/absolute_ftp_list_bof",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2011-5164/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Ayukov NFTP FTP Client Buffer Overflow",
+    "path": "exploit/windows/ftp/ayukov_nftp",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-15222/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "FTPShell client 6.70 (Enterprise edition) Stack Buffer Overflow",
+    "path": "exploit/windows/ftp/ftpshell_cli_bof",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-7573/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "LabF nfsAxe 3.7 FTP Client Stack Buffer Overflow",
+    "path": "exploit/windows/ftp/labf_nfsaxe",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-18047/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "LeapWare LeapFTP v2.7.3.600 PASV Reply Client Overflow",
+    "path": "exploit/windows/ftp/leapftp_pasv_reply",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2003-0558/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "ProFTP 2.9 Banner Remote Buffer Overflow",
+    "path": "exploit/windows/ftp/proftp_banner",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2009-3976/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "ScriptFTP LIST Remote Buffer Overflow",
+    "path": "exploit/windows/ftp/scriptftp_list",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2011-3976/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Trellian FTP Client 3.01 PASV Remote Buffer Overflow",
+    "path": "exploit/windows/ftp/trellian_client_pasv",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2010-1465/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Xlink FTP Client Buffer Overflow",
+    "path": "exploit/windows/ftp/xlink_client",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2006-5792/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Apple QuickTime 7.3 RTSP Response Header Buffer Overflow",
+    "path": "exploit/windows/misc/apple_quicktime_rtsp_response",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2007-6166/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Anviz CrossChex Buffer Overflow",
+    "path": "exploit/windows/misc/crosschex_device_bof",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-12518/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Eureka Email 2.2q ERR Remote Buffer Overflow",
+    "path": "exploit/windows/misc/eureka_mail_err",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2009-3837/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Mini-Stream 3.0.1.1 Buffer Overflow",
+    "path": "exploit/windows/misc/mini_stream",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2009-5109/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "mIRC PRIVMSG Handling Stack Buffer Overflow",
+    "path": "exploit/windows/misc/mirc_privmsg_server",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2008-4449/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS07-064 Microsoft DirectX DirectShow SAMI Buffer Overflow",
+    "path": "exploit/windows/misc/ms07_064_sami",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2007-3901/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "POP Peeper v3.4 DATE Buffer Overflow",
+    "path": "exploit/windows/misc/poppeeper_date",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2009-1029/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "POP Peeper v3.4 UIDL Buffer Overflow",
+    "path": "exploit/windows/misc/poppeeper_uidl",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2009-1029/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Realtek Media Player Playlist Buffer Overflow",
+    "path": "exploit/windows/misc/realtek_playlist",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2008-5664/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "CoCSoft StreamDown 6.8.0 Buffer Overflow",
+    "path": "exploit/windows/misc/stream_down_bof",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2011-5052/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "DLL Side Loading Vulnerability in VMware Host Guest Client Redirector",
+    "path": "exploit/windows/misc/vmhgfs_webdav_dll_sideload",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-5330/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Wireshark console.lua Pre-Loading Script Execution",
+    "path": "exploit/windows/misc/wireshark_lua",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2011-3360/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Wireshark packet-dect.c Stack Buffer Overflow",
+    "path": "exploit/windows/misc/wireshark_packet_dect",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2011-1591/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS05-030 Microsoft Outlook Express NNTP Response Parsing Buffer Overflow",
+    "path": "exploit/windows/nntp/ms05_030_nntp",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2005-1213/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Novell GroupWise Messenger Client Buffer Overflow",
+    "path": "exploit/windows/novell/groupwisemessenger_client",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2008-2703/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "ICONICS WebHMI ActiveX Buffer Overflow",
+    "path": "exploit/windows/scada/iconics_webhmi_setactivexguid",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2011-2089/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MOXA Device Manager Tool 2.1 Buffer Overflow",
+    "path": "exploit/windows/scada/moxa_mdmtool",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2010-4741/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Microsoft Windows Shell LNK Code Execution",
+    "path": "exploit/windows/smb/ms10_046_shortcut_icon_dllloader",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2010-2568/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Microsoft Windows Shell LNK Code Execution",
+    "path": "exploit/windows/smb/ms15_020_shortcut_icon_dllloader",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-0096/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS08-068 Microsoft Windows SMB Relay Code Execution",
+    "path": "exploit/windows/smb/smb_relay",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2008-4037/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "SysGauge SMTP Validation Buffer Overflow",
+    "path": "exploit/windows/smtp/sysgauge_client_bof",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-6416/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "PuTTY Buffer Overflow",
+    "path": "exploit/windows/ssh/putty_msg_debug",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2002-1359/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "SecureCRT SSH1 Buffer Overflow",
+    "path": "exploit/windows/ssh/securecrt_ssh1",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2002-1059/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "RealVNC 3.3.7 Client Buffer Overflow",
+    "path": "exploit/windows/vnc/realvnc_client",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2001-0167/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "UltraVNC 1.0.1 Client Buffer Overflow",
+    "path": "exploit/windows/vnc/ultravnc_client",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2006-1652/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "UltraVNC 1.0.2 Client (vncviewer.exe) Buffer Overflow",
+    "path": "exploit/windows/vnc/ultravnc_viewer_bof",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2008-0610/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  }
+]
