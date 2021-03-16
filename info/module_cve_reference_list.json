@@ -1,5 +1,1676 @@
 [
   {
+    "name": "ibstat $PATH Privilege Escalation",
+    "path": "exploit/aix/local/ibstat_path",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-4011/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Xorg X11 Server Local Privilege Escalation",
+    "path": "exploit/aix/local/xorg_x11_server",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-14665/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Android Binder Use-After-Free Exploit",
+    "path": "exploit/android/local/binder_uaf",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-2215/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Android 'Towelroot' Futex Requeue Kernel Exploit",
+    "path": "exploit/android/local/futex_requeue",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-3153/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Android Janus APK Signature bypass",
+    "path": "exploit/android/local/janus",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-13156/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Android get_user/put_user Exploit",
+    "path": "exploit/android/local/put_user_vroot",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-6282/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "FreeBSD Intel SYSRET Privilege Escalation",
+    "path": "exploit/freebsd/local/intel_sysret_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2012-0217/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "FreeBSD ip6_setpktopt Use-After-Free Privilege Escalation",
+    "path": "exploit/freebsd/local/ip6_setpktopt_uaf_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-7457/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "FreeBSD 9 Address Space Manipulation Privilege Escalation",
+    "path": "exploit/freebsd/local/mmap",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-2171/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "FreeBSD rtld execl() Privilege Escalation",
+    "path": "exploit/freebsd/local/rtld_execl_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2009-4146/",
+      "https://cvedetails.com/cve/CVE-2009-4147/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "FreeBSD rtld execl() Privilege Escalation",
+    "path": "exploit/freebsd/local/rtld_execl_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2009-4146/",
+      "https://cvedetails.com/cve/CVE-2009-4147/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "ABRT raceabrt Privilege Escalation",
+    "path": "exploit/linux/local/abrt_raceabrt_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-3315/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "ABRT sosreport Privilege Escalation",
+    "path": "exploit/linux/local/abrt_sosreport_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-5287/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "AF_PACKET chocobo_root Privilege Escalation",
+    "path": "exploit/linux/local/af_packet_chocobo_root_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-8655/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "AF_PACKET packet_set_ring Privilege Escalation",
+    "path": "exploit/linux/local/af_packet_packet_set_ring_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-7308/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Apport / ABRT chroot Privilege Escalation",
+    "path": "exploit/linux/local/apport_abrt_chroot_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-1318/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "blueman set_dhcp_handler D-Bus Privilege Escalation",
+    "path": "exploit/linux/local/blueman_set_dhcp_handler_dbus_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-8612/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Linux BPF doubleput UAF Privilege Escalation",
+    "path": "exploit/linux/local/bpf_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-4557/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Linux BPF Sign Extension Local Privilege Escalation",
+    "path": "exploit/linux/local/bpf_sign_extension_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-16995/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Exim 4.87 - 4.91 Local Privilege Escalation",
+    "path": "exploit/linux/local/exim4_deliver_message_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-10149/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "glibc LD_AUDIT Arbitrary DSO Load Privilege Escalation",
+    "path": "exploit/linux/local/glibc_ld_audit_dso_load_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2010-3847/",
+      "https://cvedetails.com/cve/CVE-2010-3856/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "glibc LD_AUDIT Arbitrary DSO Load Privilege Escalation",
+    "path": "exploit/linux/local/glibc_ld_audit_dso_load_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2010-3847/",
+      "https://cvedetails.com/cve/CVE-2010-3856/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "glibc '$ORIGIN' Expansion Privilege Escalation",
+    "path": "exploit/linux/local/glibc_origin_expansion_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2010-3847/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "glibc 'realpath()' Privilege Escalation",
+    "path": "exploit/linux/local/glibc_realpath_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-1000001/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "HP Performance Monitoring xglance Priv Esc",
+    "path": "exploit/linux/local/hp_xglance_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-2630/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Juju-run Agent Privilege Escalation",
+    "path": "exploit/linux/local/juju_run_agent_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-9232/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "ktsuss suid Privilege Escalation",
+    "path": "exploit/linux/local/ktsuss_suid_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2011-2921/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Libuser roothelper Privilege Escalation",
+    "path": "exploit/linux/local/libuser_roothelper_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-3245/",
+      "https://cvedetails.com/cve/CVE-2015-3246/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Libuser roothelper Privilege Escalation",
+    "path": "exploit/linux/local/libuser_roothelper_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-3245/",
+      "https://cvedetails.com/cve/CVE-2015-3246/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Linux Nested User Namespace idmap Limit Local Privilege Escalation",
+    "path": "exploit/linux/local/nested_namespace_idmap_limit_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-18955/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Linux Kernel 4.6.3 Netfilter Privilege Escalation",
+    "path": "exploit/linux/local/netfilter_priv_esc_ipv4",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-4997/",
+      "https://cvedetails.com/cve/CVE-2016-4998/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Linux Kernel 4.6.3 Netfilter Privilege Escalation",
+    "path": "exploit/linux/local/netfilter_priv_esc_ipv4",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-4997/",
+      "https://cvedetails.com/cve/CVE-2016-4998/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Network Manager VPNC Username Privilege Escalation",
+    "path": "exploit/linux/local/network_manager_vpnc_username_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-10900/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Debian/Ubuntu ntfs-3g Local Privilege Escalation",
+    "path": "exploit/linux/local/ntfs3g_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-0358/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Micro Focus (HPE) Data Protector SUID Privilege Escalation",
+    "path": "exploit/linux/local/omniresolve_suid_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-11660/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Overlayfs Privilege Escalation",
+    "path": "exploit/linux/local/overlayfs_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-1328/",
+      "https://cvedetails.com/cve/CVE-2015-8660/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Overlayfs Privilege Escalation",
+    "path": "exploit/linux/local/overlayfs_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-1328/",
+      "https://cvedetails.com/cve/CVE-2015-8660/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Linux PolicyKit Race Condition Privilege Escalation",
+    "path": "exploit/linux/local/pkexec",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2011-1485/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Linux Polkit pkexec helper PTRACE_TRACEME local root exploit",
+    "path": "exploit/linux/local/ptrace_traceme_pkexec_helper",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-13272/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Reliable Datagram Sockets (RDS) rds_atomic_free_op NULL pointer dereference Privilege Escalation",
+    "path": "exploit/linux/local/rds_atomic_free_op_null_pointer_deref_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-5333/",
+      "https://cvedetails.com/cve/CVE-2019-9213/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Reliable Datagram Sockets (RDS) rds_atomic_free_op NULL pointer dereference Privilege Escalation",
+    "path": "exploit/linux/local/rds_atomic_free_op_null_pointer_deref_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-5333/",
+      "https://cvedetails.com/cve/CVE-2019-9213/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Reliable Datagram Sockets (RDS) rds_page_copy_user Privilege Escalation",
+    "path": "exploit/linux/local/rds_rds_page_copy_user_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2010-3904/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Linux Kernel recvmmsg Privilege Escalation",
+    "path": "exploit/linux/local/recvmmsg_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-0038/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Serv-U FTP Server prepareinstallation Privilege Escalation",
+    "path": "exploit/linux/local/servu_ftp_server_prepareinstallation_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-12181/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Linux Kernel Sendpage Local Privilege Escalation",
+    "path": "exploit/linux/local/sock_sendpage",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2009-2692/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Sophos Web Protection Appliance clear_keys.pl Local Privilege Escalation",
+    "path": "exploit/linux/local/sophos_wpa_clear_keys",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-4984/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Sudo Heap-Based Buffer Overflow",
+    "path": "exploit/linux/local/sudo_baron_samedit",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2021-3156/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "SystemTap MODPROBE_OPTIONS Privilege Escalation",
+    "path": "exploit/linux/local/systemtap_modprobe_options_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2010-4170/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Linux udev Netlink Local Privilege Escalation",
+    "path": "exploit/linux/local/udev_netlink",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2009-1185/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Unitrends Enterprise Backup bpserverd Privilege Escalation",
+    "path": "exploit/linux/local/ueb_bpserverd_privesc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-6329/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Linux Kernel UDP Fragmentation Offset (UFO) Privilege Escalation",
+    "path": "exploit/linux/local/ufo_privilege_escalation",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-1000112/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "VMware Workstation ALSA Config File Local Privilege Escalation",
+    "path": "exploit/linux/local/vmware_alsa_config",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-4915/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "VMWare Setuid vmware-mount Unsafe popen(3)",
+    "path": "exploit/linux/local/vmware_mount",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-1662/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Allwinner 3.4 Legacy Kernel Local Privilege Escalation",
+    "path": "exploit/multi/local/allwinner_backdoor",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-10225/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MagniComp SysInfo mcsiwrapper Privilege Escalation",
+    "path": "exploit/multi/local/magnicomp_sysinfo_mcsiwrapper_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-6516/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Xorg X11 Server SUID logfile Privilege Escalation",
+    "path": "exploit/multi/local/xorg_x11_suid_server",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-14665/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Xorg X11 Server SUID modulepath Privilege Escalation",
+    "path": "exploit/multi/local/xorg_x11_suid_server_modulepath",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-14665/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "OpenBSD Dynamic Loader chpass Privilege Escalation",
+    "path": "exploit/openbsd/local/dynamic_loader_chpass_privesc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-19726/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "macOS cfprefsd Arbitrary File Write Local Privilege Escalation",
+    "path": "exploit/osx/local/cfprefsd_race_condition",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-9839/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Apple OS X DYLD_PRINT_TO_FILE Privilege Escalation",
+    "path": "exploit/osx/local/dyld_print_to_file_root",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-3760/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Mac OS X Feedback Assistant Race Condition",
+    "path": "exploit/osx/local/feedback_assistant_root",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-8565/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Mac OS X IOKit Keyboard Driver Root Privilege Escalation",
+    "path": "exploit/osx/local/iokit_keyboard_root",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-4404/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Mac OS X libxpc MITM Privilege Escalation",
+    "path": "exploit/osx/local/libxpc_mitm_ssudo",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-4237/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Mac OS X Root Privilege Escalation",
+    "path": "exploit/osx/local/root_no_password",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-13872/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Apple OS X Rootpipe Privilege Escalation",
+    "path": "exploit/osx/local/rootpipe",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-1130/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Apple OS X Entitlements Rootpipe Privilege Escalation",
+    "path": "exploit/osx/local/rootpipe_entitlements",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-3673/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Mac OS X 10.9.5 / 10.10.5 - rsh/libmalloc Privilege Escalation",
+    "path": "exploit/osx/local/rsh_libmalloc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-5889/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Setuid Tunnelblick Privilege Escalation",
+    "path": "exploit/osx/local/setuid_tunnelblick",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2012-3485/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Viscosity setuid-set ViscosityHelper Privilege Escalation",
+    "path": "exploit/osx/local/setuid_viscosity",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2012-4284/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Mac OS X Sudo Password Bypass",
+    "path": "exploit/osx/local/sudo_password_bypass",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-1775/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Mac OS X TimeMachine (tmdiagnose) Command Injection Privilege Escalation",
+    "path": "exploit/osx/local/timemachine_cmd_injection",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-8513/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "OS X VMWare Fusion Privilege Escalation via Bash Environment Code Injection (Shellshock)",
+    "path": "exploit/osx/local/vmware_bash_function_root",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-6271/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "VMware Fusion USB Arbitrator Setuid Privilege Escalation",
+    "path": "exploit/osx/local/vmware_fusion_lpe",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-3950/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "ifwatchd Privilege Escalation",
+    "path": "exploit/qnx/local/ifwatchd_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-2533/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Solaris 'EXTREMEPARR' dtappgather Privilege Escalation",
+    "path": "exploit/solaris/local/extremeparr_dtappgather_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-3622/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Solaris libnspr NSPR_LOG_FILE Privilege Escalation",
+    "path": "exploit/solaris/local/libnspr_nspr_log_file_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2006-4842/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Solaris RSH Stack Clash Privilege Escalation",
+    "path": "exploit/solaris/local/rsh_stack_clash_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-1000364/",
+      "https://cvedetails.com/cve/CVE-2017-3629/",
+      "https://cvedetails.com/cve/CVE-2017-3630/",
+      "https://cvedetails.com/cve/CVE-2017-3631/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Solaris RSH Stack Clash Privilege Escalation",
+    "path": "exploit/solaris/local/rsh_stack_clash_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-1000364/",
+      "https://cvedetails.com/cve/CVE-2017-3629/",
+      "https://cvedetails.com/cve/CVE-2017-3630/",
+      "https://cvedetails.com/cve/CVE-2017-3631/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Solaris RSH Stack Clash Privilege Escalation",
+    "path": "exploit/solaris/local/rsh_stack_clash_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-1000364/",
+      "https://cvedetails.com/cve/CVE-2017-3629/",
+      "https://cvedetails.com/cve/CVE-2017-3630/",
+      "https://cvedetails.com/cve/CVE-2017-3631/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Solaris RSH Stack Clash Privilege Escalation",
+    "path": "exploit/solaris/local/rsh_stack_clash_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-1000364/",
+      "https://cvedetails.com/cve/CVE-2017-3629/",
+      "https://cvedetails.com/cve/CVE-2017-3630/",
+      "https://cvedetails.com/cve/CVE-2017-3631/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Solaris xscreensaver log Privilege Escalation",
+    "path": "exploit/solaris/local/xscreensaver_log_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-3010/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Chkrootkit Local Privilege Escalation",
+    "path": "exploit/unix/local/chkrootkit",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-0476/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Exim \"perl_startup\" Privilege Escalation",
+    "path": "exploit/unix/local/exim_perl_startup",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-1531/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "NetBSD mail.local Privilege Escalation",
+    "path": "exploit/unix/local/netbsd_mail_local",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-6253/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "OpenSMTPD OOB Read Local Privilege Escalation",
+    "path": "exploit/unix/local/opensmtpd_oob_read_lpe",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-8794/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Microsoft Windows ALPC Task Scheduler Local Privilege Elevation",
+    "path": "exploit/windows/local/alpc_taskscheduler",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-8440/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Cisco AnyConnect Privilege Escalations (CVE-2020-3153 and CVE-2020-3433)",
+    "path": "exploit/windows/local/anyconnect_lpe",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-3153/",
+      "https://cvedetails.com/cve/CVE-2020-3433/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Cisco AnyConnect Privilege Escalations (CVE-2020-3153 and CVE-2020-3433)",
+    "path": "exploit/windows/local/anyconnect_lpe",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-3153/",
+      "https://cvedetails.com/cve/CVE-2020-3433/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "AppXSvc Hard Link Privilege Escalation",
+    "path": "exploit/windows/local/appxsvc_hard_link_privesc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-0841/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS14-062 Microsoft Bluetooth Personal Area Networking (BthPan.sys) Privilege Escalation",
+    "path": "exploit/windows/local/bthpan",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-4971/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Microsoft UPnP Local Privilege Elevation Vulnerability",
+    "path": "exploit/windows/local/comahawk",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-1322/",
+      "https://cvedetails.com/cve/CVE-2019-1405/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Microsoft UPnP Local Privilege Elevation Vulnerability",
+    "path": "exploit/windows/local/comahawk",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-1322/",
+      "https://cvedetails.com/cve/CVE-2019-1405/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "PsExec via Current User Token",
+    "path": "exploit/windows/local/current_user_psexec",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-1999-0504/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "LNK Code Execution Vulnerability",
+    "path": "exploit/windows/local/cve_2017_8464_lnk_lpe",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-8464/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows NtUserSetWindowFNID Win32k User Callback",
+    "path": "exploit/windows/local/cve_2018_8453_win32k_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-8453/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Microsoft Windows Uninitialized Variable Local Privilege Elevation",
+    "path": "exploit/windows/local/cve_2019_1458_wizardopium",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-1458/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Service Tracing Privilege Elevation Vulnerability",
+    "path": "exploit/windows/local/cve_2020_0668_service_tracing",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-0668/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Background Intelligent Transfer Service Arbitrary File Move Privilege Elevation Vulnerability",
+    "path": "exploit/windows/local/cve_2020_0787_bits_arbitrary_file_move",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-0787/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "SMBv3 Compression Buffer Overflow",
+    "path": "exploit/windows/local/cve_2020_0796_smbghost",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-0796/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Microsoft Spooler Local Privilege Elevation Vulnerability",
+    "path": "exploit/windows/local/cve_2020_1048_printerdemon",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-1048/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Microsoft Windows DrawIconEx OOB Write Local Privilege Elevation",
+    "path": "exploit/windows/local/cve_2020_1054_drawiconex_lpe",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-1054/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows Update Orchestrator unchecked ScheduleWork call",
+    "path": "exploit/windows/local/cve_2020_1313_system_orchestrator",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-1313/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Microsoft Spooler Local Privilege Elevation Vulnerability",
+    "path": "exploit/windows/local/cve_2020_1337_printerdemon",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-1337/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "CVE-2020-1170 Cloud Filter Arbitrary File Creation EOP",
+    "path": "exploit/windows/local/cve_2020_17136",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-17136/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Docker-Credential-Wincred.exe Privilege Escalation",
+    "path": "exploit/windows/local/docker_credential_wincred",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-15752/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Druva inSync inSyncCPHwnet64.exe RPC Type 5 Privilege Escalation",
+    "path": "exploit/windows/local/druva_insync_insynccphwnet64_rcp_type_5_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-3999/",
+      "https://cvedetails.com/cve/CVE-2020-5752/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Druva inSync inSyncCPHwnet64.exe RPC Type 5 Privilege Escalation",
+    "path": "exploit/windows/local/druva_insync_insynccphwnet64_rcp_type_5_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-3999/",
+      "https://cvedetails.com/cve/CVE-2020-5752/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "GOG GalaxyClientService Privilege Escalation",
+    "path": "exploit/windows/local/gog_galaxyclientservice_privesc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-7352/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "iPass Mobile Client Service Privilege Escalation",
+    "path": "exploit/windows/local/ipass_launch_app",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-0925/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Lenovo System Update Privilege Escalation",
+    "path": "exploit/windows/local/lenovo_systemupdate",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-2219/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Micro Focus Operations Bridge Manager Local Privilege Escalation",
+    "path": "exploit/windows/local/microfocus_operations_privesc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2020-11858/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "Required",
+    "url": "Required"
+  },
+  {
+    "name": "Microsoft Windows POP/MOV SS Local Privilege Elevation Vulnerability",
+    "path": "exploit/windows/local/mov_ss",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-8897/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MQAC.sys Arbitrary Write Privilege Escalation",
+    "path": "exploit/windows/local/mqac_write",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-4971/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows SYSTEM Escalation via KiTrap0D",
+    "path": "exploit/windows/local/ms10_015_kitrap0d",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2010-0232/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows Escalate Task Scheduler XML Privilege Escalation",
+    "path": "exploit/windows/local/ms10_092_schelevator",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2010-3338/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS11-080 AfdJoinLeaf Privilege Escalation",
+    "path": "exploit/windows/local/ms11_080_afdjoinleaf",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2011-2005/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS13-005 HWND_BROADCAST Low to Medium Integrity Privilege Escalation",
+    "path": "exploit/windows/local/ms13_005_hwnd_broadcast",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-0008/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows NTUserMessageCall Win32k Kernel Pool Overflow (Schlamperei)",
+    "path": "exploit/windows/local/ms13_053_schlamperei",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-1300/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows TrackPopupMenuEx Win32k NULL Page",
+    "path": "exploit/windows/local/ms13_081_track_popup_menu",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-3881/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS13-097 Registry Symlink IE Sandbox Escape",
+    "path": "exploit/windows/local/ms13_097_ie_registry_symlink",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-5045/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS14-009 .NET Deployment Service IE Sandbox Escape",
+    "path": "exploit/windows/local/ms14_009_ie_dfsvc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-0257/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows TrackPopupMenu Win32k NULL Pointer Dereference",
+    "path": "exploit/windows/local/ms14_058_track_popup_menu",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-4113/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS14-070 Windows tcpip!SetAddrOptions NULL Pointer Dereference",
+    "path": "exploit/windows/local/ms14_070_tcpip_ioctl",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-4076/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS15-004 Microsoft Remote Desktop Services Web Proxy IE Sandbox Escape",
+    "path": "exploit/windows/local/ms15_004_tswbproxy",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-0016/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows ClientCopyImage Win32k Exploit",
+    "path": "exploit/windows/local/ms15_051_client_copy_image",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-1701/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS15-078 Microsoft Windows Font Driver Buffer Overflow",
+    "path": "exploit/windows/local/ms15_078_atmfd_bof",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-2426/",
+      "https://cvedetails.com/cve/CVE-2015-2433/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS15-078 Microsoft Windows Font Driver Buffer Overflow",
+    "path": "exploit/windows/local/ms15_078_atmfd_bof",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-2426/",
+      "https://cvedetails.com/cve/CVE-2015-2433/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows WMI Receive Notification Exploit",
+    "path": "exploit/windows/local/ms16_014_wmi_recv_notif",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-0040/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS16-016 mrxdav.sys WebDav Local Privilege Escalation",
+    "path": "exploit/windows/local/ms16_016_webdav",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-0051/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS16-032 Secondary Logon Handle Privilege Escalation",
+    "path": "exploit/windows/local/ms16_032_secondary_logon_handle_privesc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-0099/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows Net-NTLMv2 Reflection DCOM/RPC",
+    "path": "exploit/windows/local/ms16_075_reflection",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-3225/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows Net-NTLMv2 Reflection DCOM/RPC (Juicy)",
+    "path": "exploit/windows/local/ms16_075_reflection_juicy",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2016-3225/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows SetImeInfoEx Win32k NULL Pointer Dereference",
+    "path": "exploit/windows/local/ms18_8120_win32k_privesc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-8120/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS14-002 Microsoft Windows ndproxy.sys Local Privilege Escalation",
+    "path": "exploit/windows/local/ms_ndproxy",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-5065/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Novell Client 2 SP3 nicm.sys Local Privilege Escalation",
+    "path": "exploit/windows/local/novell_client_nicm",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-3956/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Novell Client 4.91 SP4 nwfs.sys Local Privilege Escalation",
+    "path": "exploit/windows/local/novell_client_nwfs",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2008-3158/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "MS15-001 Microsoft Windows NtApphelpCacheControl Improper Authorization Check",
+    "path": "exploit/windows/local/ntapphelpcachecontrol",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2015-0002/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Microsoft Windows NtUserMNDragOver Local Privilege Elevation",
+    "path": "exploit/windows/local/ntusermndragover",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-0808/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Nvidia (nvsvc) Display Driver Service Local Privilege Escalation",
+    "path": "exploit/windows/local/nvidia_nvsvc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-0109/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Plantronics Hub SpokesUpdateService Privilege Escalation",
+    "path": "exploit/windows/local/plantronics_hub_spokesupdateservice_privesc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-15742/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Powershell Remoting Remote Command Execution",
+    "path": "exploit/windows/local/powershell_remoting",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-1999-0504/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows EPATHOBJ::pprFlattenRec Local Privilege Escalation",
+    "path": "exploit/windows/local/ppr_flatten_rec",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2013-3660/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Razer Synapse rzpnk.sys ZwOpenProcess",
+    "path": "exploit/windows/local/razer_zwopenprocess",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2017-9769/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Ricoh Driver Privilege Escalation",
+    "path": "exploit/windows/local/ricoh_driver_privesc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2019-19363/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "VirtualBox Guest Additions VBoxGuest.sys Privilege Escalation",
+    "path": "exploit/windows/local/virtual_box_guest_additions",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-2477/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "VirtualBox 3D Acceleration Virtual Machine Escape",
+    "path": "exploit/windows/local/virtual_box_opengl_escape",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2014-0983/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "WebEx Local Service Permissions Exploit",
+    "path": "exploit/windows/local/webexec",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-15442/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windscribe WindscribeService Named Pipe Privilege Escalation",
+    "path": "exploit/windows/local/windscribe_windscribeservice_priv_esc",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-2018-11479/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
+    "name": "Windows Management Instrumentation (WMI) Remote Command Execution",
+    "path": "exploit/windows/local/wmi",
+    "CVE reference": [
+      "https://cvedetails.com/cve/CVE-1999-0504/"
+    ],
+    "target": "Required",
+    "credentials": "-",
+    "port": "-",
+    "url": "-"
+  },
+  {
     "name": "Grafana 2.0 through 5.2.2 authentication bypass for LDAP and OAuth",
     "path": "auxiliary/admin/http/grafana_auth_bypass",
     "CVE reference": [
