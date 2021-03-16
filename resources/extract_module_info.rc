@@ -34,6 +34,13 @@ def sort_platform_string(string)
   string.split(',').each(&:strip!).sort.join(',')
 end
 
+# Mixins that can be filtered as they're not interesting
+common_mixins = (
+    Msf::Exploit.ancestors +
+    Msf::Auxiliary.ancestors +
+    Msf::Post.ancestors
+).map(&:to_s).uniq
+
 _, total_time = record_time do
   STDERR.puts 'Extracting module paths'
   module_paths, module_paths_timing = record_time { framework.modules.to_a }
@@ -71,6 +78,7 @@ _, total_time = record_time do
       references: mod.references.map { |ref| { 'type' => ref.ctx_id, 'value' => ref.ctx_val, 'site' => ref.site } },
       platform: sort_platform_string(mod.platform_to_s),
       arch: mod.arch_to_s,
+      mixins: mod.class.ancestors.map(&:to_s) - common_mixins - [mod.class.to_s],
       autofilter_ports: (
           mod.respond_to?(:autofilter_ports) ? mod.autofilter_ports : nil
         ),
