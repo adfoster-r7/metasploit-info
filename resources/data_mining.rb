@@ -5,24 +5,23 @@ require 'json'
 #
 # Module rankings - From Metasploit, check out the wiki for what it means
 #
-ManualRanking       = 0
-LowRanking          = 100
-AverageRanking      = 200
-NormalRanking       = 300
-GoodRanking         = 400
-GreatRanking        = 500
-ExcellentRanking    = 600
-RankingName         =
+ManualRanking = 0
+LowRanking = 100
+AverageRanking = 200
+NormalRanking = 300
+GoodRanking = 400
+GreatRanking = 500
+ExcellentRanking = 600
+RankingName =
   {
-    ManualRanking    => "manual",
-    LowRanking       => "low",
-    AverageRanking   => "average",
-    NormalRanking    => "normal",
-    GoodRanking      => "good",
-    GreatRanking     => "great",
+    ManualRanking => "manual",
+    LowRanking => "low",
+    AverageRanking => "average",
+    NormalRanking => "normal",
+    GoodRanking => "good",
+    GreatRanking => "great",
     ExcellentRanking => "excellent"
   }
-
 
 json = File.read("info/module_metadata.json")
 # Step 1) Get our array of modules
@@ -86,38 +85,49 @@ end
 # puts JSON.pretty_generate(transformed_data)
 
 def render_modules(modules)
+
+  modules_grouped_by_year = modules.group_by { |mod| mod['disclosure_date'] }
+
+  # grouping by rank
   modules_grouped_by_ranking = modules.group_by { |mod| mod['rank'] }.sort
-
   tables = modules_grouped_by_ranking.map do |(ranking, modules)|
-    table_heading = <<~EOF
-      ### #{RankingName[ranking].capitalize} Ranking (#{modules.count})
+    rank_heading = <<~EOF
 
-      | # | Module Name | Module Path | Target | Credentials | Port | URL |
-      | :---: | :--- | :--- | :----: | :----: | :----: | :---: |
+        ### #{RankingName[ranking].capitalize} Ranking (#{modules.count})
+        ---
     EOF
+    modules_grouped_by_year = modules.group_by { |mod| (mod['disclosure_date'] || 'No Disclosure Date').split('-')[0] }.sort_by { |year, _mods| year }.to_h
+    yearly_tables = modules_grouped_by_year.map do |year, modules|
+      year_heading = <<~EOF
+        ### #{year} (#{modules.count})
+        | # | Module Name | Module Path | Target | Credentials | Port | URL |
+        | :---: | :--- | :--- | :----: | :----: | :----: | :---: |
+      EOF
 
-    rows = modules.each_with_index.map do |mod, i|
-      [
-        i + 1,
-        mod['name'],
-        mod['fullname'],
-        mod['has_targets'] ? 'Required' : '-',
-        mod['has_default_credentials'] ? 'Required' : '-',
-        mod['has_rport_option'] ? 'Required' : '-',
-        mod['has_target_uri_option'] ? 'Required' : '-',
-      ].join('|')
-    end.join("\n")
+      rows = modules.each_with_index.map do |mod, i|
+        [
+          i + 1,
+          mod['name'],
+          mod['fullname'],
+          mod['has_targets'] ? 'Required' : '-',
+          mod['has_default_credentials'] ? 'Required' : '-',
+          mod['has_rport_option'] ? 'Required' : '-',
+          mod['has_target_uri_option'] ? 'Required' : '-',
+        ].join('|')
+      end.join("\n")
 
-    table_heading + rows
+      year_heading + rows
+    end.join("\n\n")
+
+    rank_heading + yearly_tables
   end.join("\n\n")
-
   tables
 end
 
 def render_ranking_tally(modules)
   tally = modules.map { |mod| mod['rank'] }.tally.sort_by { |(rank, _count)| rank }
   tally.map do |(rank, count)|
-    "\t- #{RankingName[rank].capitalize} - #{count}"
+    "\t- #{count} #{RankingName[rank].capitalize}"
   end.join("\n")
 end
 
@@ -153,7 +163,7 @@ modules = transformed_data.select { |mod| mod['is_shown'] }
 session_required = modules.select { |mod| mod['is_session_required'] }
 session_not_required = modules.select { |mod| !mod['is_session_required'] }
 
-cve_ids = modules.flat_map { |mod| mod['references'] }.select { |ref| ref['type'] == 'CVE' }.map { |ref| "#{ref['type']}-#{ref['value']}" }.uniq
+cve_ids = modules.flat_map { |mod| mod['references'] }.select { |ref| ref['type'] == 'CVE' }.map { |ref| "#{ref['type']}-#{ref['value']}" }.uniq.sort
 File.write('info/new_module_list_session_required.md', create_markdown_file(session_required))
 File.write('info/new_module_list_session_not_required.md', create_markdown_file(session_not_required))
 File.write('info/new_cve_ids.json', JSON.pretty_generate(cve_ids))
