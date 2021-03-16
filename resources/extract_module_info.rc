@@ -68,7 +68,7 @@ _, total_time = record_time do
       type: mod.type,
       author: mod.author.map { |x| x.to_s.force_encoding("UTF-8") },
       description: mod.description.to_s.strip.force_encoding("UTF-8"),
-      references: mod.references,
+      references: mod.references.map { |ref| { 'type' => ref.ctx_id, 'value' => ref.ctx_val, 'site' => ref.site } },
       platform: sort_platform_string(mod.platform_to_s),
       arch: mod.arch_to_s,
       autofilter_ports: (
