@@ -164,6 +164,6 @@ session_required = modules.select { |mod| mod['is_session_required'] }
 session_not_required = modules.select { |mod| !mod['is_session_required'] }
 
 cve_ids = modules.flat_map { |mod| mod['references'] }.select { |ref| ref['type'] == 'CVE' }.map { |ref| "#{ref['type']}-#{ref['value']}" }.uniq.sort
-File.write('info/new_module_list_session_required.md', create_markdown_file(session_required))
-File.write('info/new_module_list_session_not_required.md', create_markdown_file(session_not_required))
-File.write('info/new_cve_ids.json', JSON.pretty_generate(cve_ids))
+File.write('info/module_list_session_required.md', create_markdown_file(session_required))
+File.write('info/module_list_session_not_required.md', create_markdown_file(session_not_required))
+File.write('info/cve_ids.json', JSON.pretty_generate(cve_ids))
