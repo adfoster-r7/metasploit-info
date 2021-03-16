@@ -1,11 +1,15 @@
 ## Script to crawl through `module_metadata_base.json` and return all modules that only require target, port,lomvom
 #  credentials, or URL paths
 
+
+# TODO: Sessions required - Remove android
+
 require 'json'
 
 # File handling
 json = File.read("info/module_metadata.json")
 parsed = JSON.parse(json)
+# parsed = parsed.select { |mod| mod['path'] =~ /gitstack_rest/ }
 
 # Initialising counts
 no_sess_req_count = 1
@@ -92,7 +96,7 @@ def mod_search_by_type(parsed, count, mod_type, session)
   table_header(mod_type.capitalize, file)
   parsed.each do |mod|
     if mod['type'] == mod_type
-      if session && mod['session_types'].kind_of?(Array) && !mod['options'].any? { |options| options['name'] == "SESSION" && options['required'] == true }
+      if session && mod['session_types'].kind_of?(Array) && mod['options'].any? { |options| options['name'] == "SESSION" && options['required'] == true }
         count += 1 if gather_results(mod, count, file)
       elsif !session && mod['session_types'].nil?
         unless mod['options'].any? { |options| options['required'] == true && options['default'] == "" }
@@ -143,3 +147,17 @@ end
 
 session_required(parsed, sess_req_count, total_count)
 no_session_required(parsed, no_sess_req_count, total_count)
+
+parsed.each do |mod|
+  if mod['description'].include?('ManualRanking')
+    puts mod['name']
+    puts mod['rank']
+  end
+end
+
+parsed.each do |mod|
+  if mod['rank'] == 0
+    puts mod['name']
+    puts mod['rank']
+  end
+end
