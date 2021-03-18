@@ -88,6 +88,7 @@ _, total_time = record_time do
       targets: (
           (mod.respond_to?(:targets) && mod.targets) ? mod.targets.map(&:name) : nil
         ),
+      # TODO: This can't be used, and is always set to false
       auto_target: mod.respond_to?(:auto_target?) ? mod.auto_target? : nil,
       path: mod.file_path.sub(/^#{Msf::Config.install_root}/, ''),
       ref_name: mod.class.refname,

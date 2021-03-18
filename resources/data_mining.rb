@@ -27,7 +27,7 @@ RankingName =
 json = File.read("info/module_metadata.json")
 data = JSON.parse(json)
 # data = data.reverse.take(50)
-# data = data.select { |mod| mod['path'] =~ /smb_version/ }
+# data = data.select { |mod| mod['path'] =~ /grafana_auth_bypass/ }
 
 # Step 2) Create a new intermediate data structure which:
 #   - Filters out the no longer required modules
@@ -37,39 +37,71 @@ def session_required?(mod)
   mod['session_types'].kind_of?(Array) && mod['options'].any? { |options| options['name'] == "SESSION" && options['required'] == true }
 end
 
-transformed_data = data.map do |mod|
-  has_targets = !mod['targets'].nil?
-  has_default_credentials = mod['default_credential'] != false
-  has_rhost_option = mod['options'].any? do |option|
-    option['name'].casecmp?('RHOSTS') &&
-      option['type'] == 'addressrange' &&
-      # TODO: modules/exploits/windows/local/powershell_remoting marks this as optional, as it can take a file
-      option['required'] == true
+def rhosts_option(mod)
+  mod['options'].find do |option|
+    option['name'].casecmp?('RHOSTS') && option['type'] == 'addressrange'
   end
-  has_rport_option = mod['options'].any? do |option|
+end
+
+def rport_option(mod)
+  mod['options'].find do |option|
     # External modules use lowercase
-    option['name'].casecmp?('RPORT') &&
-      (option['type'] == 'port' || option['type'] == 'integer') &&
-      # TODO: Some modules mark this as optional
-      option['required'] == true
+    option['name'].casecmp?('RPORT') && (option['type'] == 'port' || option['type'] == 'integer')
   end
-  has_target_uri_option = mod['options'].any? do |option|
+end
+
+def target_uri_option(mod)
+  mod['options'].find do |option|
     option['type'] == 'string' &&
       (option['name'] == 'TARGETURI' || option['name'] == 'TARGET_URI') &&
       option['required'] == true
   end
+end
+
+def required?(option)
+  option['required'] == true
+end
+
+def default?(option)
+  option['default'] != ''
+end
+
+# Extracted from lib/msf/core/module.rb
+def required_cred_options(mod)
+  mod['options'].select { |opt|
+    (
+    opt['type'] == 'string' &&
+      required?(opt) &&
+      (opt['name'].match(/user(name)*$/i) || opt['name'].match(/pass(word)*$/i))
+    ) ||
+      (
+      opt['type'] == 'bool' &&
+        required?(opt) &&
+        opt['name'].match(/^allow_guest$/i)
+      )
+  }
+end
+
+transformed_data = data.map do |mod|
+  has_targets = !mod['targets'].nil?
+  has_default_credentials = mod['default_credential'] != false
+
+  has_rhost_option = !rhosts_option(mod).nil?
+  has_rport_option = !rport_option(mod).nil?
+  has_target_uri_option = !target_uri_option(mod).nil?
+
   has_allowed_module_path = (
-  !mod['path'].include?("/browser/") &&
-    !mod['path'].include?("/fileformat/") &&
-    !mod['path'].include?("/hwbridge/") &&
-    !mod['path'].include?("/hams/") &&
-    !mod['path'].include?("/ut2004_secure/") &&
-    !mod['path'].include?("/android/")
+    !mod['path'].include?("/browser/") &&
+      !mod['path'].include?("/fileformat/") &&
+      !mod['path'].include?("/hwbridge/") &&
+      !mod['path'].include?("/hams/") &&
+      !mod['path'].include?("/ut2004_secure/") &&
+      !mod['path'].include?("/android/")
   )
   has_all_options_defaultable = !mod['options'].any? do |option|
-    next if option['name'] == 'RHOSTS'
+    next if option['name'].casecmp?('RHOSTS')
 
-    option['required'] == true && option['default'] == ""
+    required?(option) && !default?(option)
   end
   is_dos_module = (
     mod['mixins'].include?('Msf::Auxiliary::Dos') ||
@@ -92,7 +124,7 @@ transformed_data = data.map do |mod|
     has_targets,
     has_default_credentials,
     has_rhost_option,
-    has_target_uri_option,
+    has_rport_option && default?(rport_option(mod)),
   ].any?
 
   is_session_required = session_required?(mod)
@@ -130,6 +162,36 @@ end
 #   Generate json files
 # puts JSON.pretty_generate(transformed_data)
 
+def render_option_tick(option)
+  if option.nil?
+    '-'
+  elsif default?(option)
+    '✓'
+  else
+    '✗'
+  end
+end
+
+def render_targets_tick(mod)
+  if !mod['targets']
+    '-'
+  elsif mod['targets'] && (mod['targets'].length == 1 || mod['targets'].any? { |target| target =~ /Automatic/ })
+    '✓'
+  else
+    '✗'
+  end
+end
+
+def render_credential_tick(mod)
+  if required_cred_options(mod).empty?
+    '-'
+  elsif mod['has_default_credentials']
+    '✓'
+  else
+    '✗'
+  end
+end
+
 def render_modules(modules)
   modules_grouped_by_ranking = modules.group_by { |mod| mod['rank'] }.sort
   modules_grouped_by_ranking.map do |(ranking, modules)|
@@ -152,11 +214,11 @@ def render_modules(modules)
           i + 1,
           mod['name'],
           mod['fullname'],
-          mod['has_targets'] ? 'Required' : '-',
-          mod['has_default_credentials'] ? 'Required' : '-',
-          mod['has_rhost_option'] ? 'Required' : '-',
-          mod['has_rport_option'] ? 'Required' : '-',
-          mod['has_target_uri_option'] ? 'Required' : '-',
+          render_targets_tick(mod),
+          render_credential_tick(mod),
+          render_option_tick(rhosts_option(mod)),
+          render_option_tick(rport_option(mod)),
+          render_option_tick(target_uri_option(mod)),
         ].join('|')
       end.join("\n")
 
@@ -190,6 +252,11 @@ def create_markdown_file(modules)
     #{render_ranking_tally(exploits)}
     - Evasion #{evasions.count}
     #{render_ranking_tally(evasions)}
+
+    ## Table legend
+    - `✓` - Option present with default value provided
+    - `✗` - Option present but no default value
+    - `-` - Option not present
 
     ## Auxiliary (#{auxiliary.count})
     #{render_modules(auxiliary)}
