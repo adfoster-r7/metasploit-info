@@ -101,7 +101,7 @@ _, total_time = record_time do
     }
 
     if mod.type == 'exploit'
-        mod[:compatible_payloads] = mod.compatible_payloads.map { |payload_name, payload_class| payload_name }
+        data[:compatible_payloads] = mod.compatible_payloads.map { |payload_name, payload_class| payload_name }
     end
 
     data
