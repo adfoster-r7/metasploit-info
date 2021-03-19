@@ -65,7 +65,7 @@ _, total_time = record_time do
       }
     end
 
-    {
+    data = {
       name: mod.name.dup.force_encoding("UTF-8"),
       fullname: mod.realname.dup.force_encoding("UTF-8"),
       aliases: mod.aliases,
@@ -88,7 +88,6 @@ _, total_time = record_time do
       targets: (
           (mod.respond_to?(:targets) && mod.targets) ? mod.targets.map(&:name) : nil
         ),
-      auto_target: mod.respond_to?(:auto_target?) ? mod.auto_target? : nil,
       path: mod.file_path.sub(/^#{Msf::Config.install_root}/, ''),
       ref_name: mod.class.refname,
       check: mod.has_check?,
@@ -100,6 +99,12 @@ _, total_time = record_time do
         ),
       options: options
     }
+
+    if mod.type == 'exploit'
+        mod[:compatible_payloads] = mod.compatible_payloads.map { |payload_name, payload_class| payload_name }
+    end
+
+    data
   end
 
   File.open(output_path, mode: 'w') do |output_file|
