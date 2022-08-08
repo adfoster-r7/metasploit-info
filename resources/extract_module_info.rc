@@ -46,9 +46,9 @@ _, total_time = record_time do
   module_sets, module_paths_timing = record_time { framework.modules.send(:module_set_by_type) }
   STDERR.puts "Extracted module paths in #{module_paths_timing}"
 
-  modules_metadata = module_sets.map do |(module_set_name, modules)|
+  modules_metadata = module_sets.flat_map do |(module_set_name, modules)|
     module_paths = modules.keys
-    module_paths.each do |module_path|
+    module_paths.map do |module_path|
       module_folder = Msf::Modules::Loader::Base::DIRECTORY_BY_TYPE[module_set_name]
       full_module_path = "#{module_folder}/#{module_path}"
 
@@ -123,8 +123,11 @@ _, total_time = record_time do
     end
   end
 
+  # Discard nil and sort by fullname for determinsitic output
+  sorted_modules_metadata = modules_metadata.compact.sort_by { |metadata| metadata[:fullname] }
+
   File.open(output_path, mode: 'w') do |output_file|
-    result = JSON.pretty_generate(modules_metadata)
+    result = JSON.pretty_generate(sorted_modules_metadata)
     # STDERR.puts "Writing results:"
     # STDOUT.puts result
     output_file.write(result)
