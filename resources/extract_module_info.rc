@@ -7,6 +7,7 @@
 <ruby>
 
 require 'fileutils'
+require 'base64'
 
 # TODO: Investigate why calling "create" on most modules takes a minimum of 0.3 seconds
 # Metasploit::Framework::Profiler.record_cpu do
@@ -32,6 +33,47 @@ index = 0
 
 def sort_platform_string(string)
   string.split(',').each(&:strip!).sort.join(',')
+end
+
+def with_utf8_encoding(val)
+  base64_keys = [
+    'Shellcode',
+    'NOP',
+    'Prepend',
+    'PrependEncoder',
+    'PrepShellcode1',
+    'PrepShellcode2',
+    'BranchDelay',
+    'CLSID',
+    'Ret',
+    'AdobeCollabSyncTriggerSignature',
+    '_TOKEN',
+    '_UPID',
+    '_APLINKS',
+    'jmpPayload'
+  ].map { |key| key.force_encoding('UTF-8') }
+
+  return val.dup.force_encoding("UTF-8") if val.is_a?(String)
+  return val.map do |key, val|
+    [
+      with_utf8_encoding(key),
+      (base64_keys.include?(with_utf8_encoding(key)) && val.is_a?(String)) ? Base64.strict_encode64(val) : with_utf8_encoding(val)
+    ]
+  end.to_h if val.is_a?(Hash)
+  return val.map { |val| with_utf8_encoding(val) } if val.is_a?(Array)
+
+  val
+end
+
+def target_to_h(target)
+  opts = target.opts.dup
+
+  with_utf8_encoding(
+    {
+      name: target.name,
+      opts: opts
+    }
+  )
 end
 
 # Mixins that can be filtered as they're not interesting
@@ -97,7 +139,7 @@ _, total_time = record_time do
               mod.respond_to?(:autofilter_services) ? mod.autofilter_services : nil
             ),
           targets: (
-              (mod.respond_to?(:targets) && mod.targets) ? mod.targets.map(&:name) : nil
+              (mod.respond_to?(:targets) && mod.targets) ? mod.targets.map { |target| target_to_h(target) } : nil
             ),
           path: mod.file_path.sub(/^#{Msf::Config.install_root}/, ''),
           ref_name: mod.class.refname,
