@@ -78,10 +78,10 @@ end
 
 # Mixins that can be filtered as they're not interesting
 common_mixins = (
-    Msf::Exploit.ancestors +
-    Msf::Auxiliary.ancestors +
+    Msf::Exploit.ancestors &
+    Msf::Auxiliary.ancestors &
     Msf::Post.ancestors
-).map(&:to_s).uniq
+).map(&:to_s)
 
 _, total_time = record_time do
   STDERR.puts 'Extracting module paths'
@@ -154,7 +154,20 @@ _, total_time = record_time do
         }
 
         if module_set_name == 'exploit'
-            data[:compatible_payloads] = mod.compatible_payloads.map { |payload_name, payload_class| payload_name }
+          data[:compatible_payloads] = mod.compatible_payloads.map { |payload_name, payload_class| payload_name }
+        end
+
+        if module_set_name == 'payload'
+          payload_data = {
+            payload_type: mod.payload_type,
+            adapter_refname: mod.adapter_refname,
+            adapted_refname: mod.adapted_refname,
+            # adapted: mod.adapted?,
+            staged: mod.staged?,
+            stage_refname: mod.stage_refname,
+            stager_refname: mod.stager_refname,
+          }.compact
+          data.merge!(payload_data)
         end
 
         data

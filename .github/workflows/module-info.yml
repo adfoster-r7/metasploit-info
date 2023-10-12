@@ -31,7 +31,7 @@ jobs:
       fail-fast: true
       matrix:
         ruby:
-          - 2.7
+          - 3.2
         info_cmd:
           - >-
             set -euxo pipefail;
@@ -56,7 +56,6 @@ jobs:
         with:
           path: metasploit-info
 
-
       - name: ${{ matrix.test_cmd }}
         run: |
           echo "${CMD}"
@@ -70,9 +69,11 @@ jobs:
           repository: rapid7/metasploit-framework
           path: metasploit-framework
 
-      - uses: actions/setup-ruby@v1
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
 
       - name: Setup bundler
         run: |
@@ -111,7 +112,7 @@ jobs:
           CMD: ${{ matrix.info_cmd }}
 
       - name: Commit
-        uses: EndBug/add-and-commit@v6
+        uses: EndBug/add-and-commit@v9
         with:
           add: './info'
           author_name: Metasploit Github Actions
