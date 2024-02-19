@@ -124,6 +124,7 @@ _, total_time = record_time do
           aliases: mod.aliases,
           rank: mod.rank,
           stance: mod.send(:module_info)['Stance'],
+          passive: mod.send(:module_info)['Passive'],
           session_types: mod.respond_to?(:session_types) ? mod.session_types : nil,
           disclosure_date: mod.disclosure_date.nil? ? nil : mod.disclosure_date.to_s,
           type: mod.type,
