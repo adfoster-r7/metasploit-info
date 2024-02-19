@@ -123,6 +123,7 @@ _, total_time = record_time do
           fullname: mod.realname.dup.force_encoding("UTF-8"),
           aliases: mod.aliases,
           rank: mod.rank,
+          stance: mod.send(:module_info)['Stance'],
           session_types: mod.respond_to?(:session_types) ? mod.session_types : nil,
           disclosure_date: mod.disclosure_date.nil? ? nil : mod.disclosure_date.to_s,
           type: mod.type,
