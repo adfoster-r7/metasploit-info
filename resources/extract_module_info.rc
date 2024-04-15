@@ -146,12 +146,13 @@ _, total_time = record_time do
           path: mod.file_path.sub(/^#{Msf::Config.install_root}/, ''),
           ref_name: mod.class.refname,
           check: mod.has_check?,
-          postAuth: mod.post_auth?,
+          post_auth: mod.post_auth?,
           default_credential: mod.default_cred?,
           notes: mod.notes,
           needs_cleanup: (
               mod.respond_to?(:needs_cleanup?) ? mod.needs_cleanup? : nil
             ),
+          default_options: mod.send(:module_info)['DefaultOptions'],
           options: options
         }
 
