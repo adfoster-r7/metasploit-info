@@ -106,7 +106,7 @@ _, total_time = record_time do
 
       data, module_data_extraction_time = record_time do
         options = mod.options.values.sort_by(&:name).map do |option|
-          {
+          result = {
             type: option.type,
             name: option.name,
             required: option.required,
@@ -116,6 +116,10 @@ _, total_time = record_time do
             evasion: option.evasion,
             description: option.desc
           }
+          if option.type == 'enum'
+            result[:enums] = option.enums
+          end
+          result
         end
 
         data = {
