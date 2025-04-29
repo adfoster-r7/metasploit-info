@@ -157,7 +157,11 @@ _, total_time = record_time do
               mod.respond_to?(:needs_cleanup?) ? mod.needs_cleanup? : nil
             ),
           default_options: mod.send(:module_info)['DefaultOptions'],
-          options: options
+          options: options,
+          # Actions
+          actions: mod.respond_to?(:actions) ? mod.actions : nil,
+          default_action: mod.respond_to?(:default_action) ? mod.default_action : nil,
+          passive_actions: mod.respond_to?(:passive_actions) ? mod.passive_actions : nil,
         }
 
         if module_set_name == 'exploit'

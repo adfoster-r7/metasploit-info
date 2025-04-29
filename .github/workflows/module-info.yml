@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     timeout-minutes: 40
 
     services:
@@ -31,7 +31,7 @@ jobs:
       fail-fast: true
       matrix:
         ruby:
-          - 3.2
+          - 3.3
         info_cmd:
           - >-
             set -euxo pipefail;
@@ -45,6 +45,7 @@ jobs:
 
     env:
       RAILS_ENV: test
+      BUNDLE_WITHOUT: "coverage development pcap"
 
     name: Ruby ${{ matrix.ruby }} - ${{ matrix.test_cmd }}
     steps:
@@ -74,25 +75,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-
-      - name: Setup bundler
-        run: |
-          gem install bundler
-
-      - uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-
-      - name: Bundle install
-        run: |
-          cd metasploit-framework
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
-        env:
-          BUNDLER_WITHOUT: coverage development pcap
+          working-directory: metasploit-framework
 
       - name: Create database
         run: |
