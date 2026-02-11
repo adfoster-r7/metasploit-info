@@ -22,7 +22,7 @@ def record_time
   [result, elapsed]
 end
 
-output_path = File.join(Msf::Config.install_root, 'tmp', 'module_metadata.json')
+output_path = File.join(Msf::Config.install_root, 'tmp', 'module_metadata_latest.json')
 File.delete(output_path) if File.exist?(output_path)
 
 STDERR.puts 'Reloading all modules for faster extraction...'

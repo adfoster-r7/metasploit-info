@@ -31,13 +31,13 @@ jobs:
       fail-fast: true
       matrix:
         ruby:
-          - 3.3
+          - 3.3.8
         info_cmd:
           - >-
             set -euxo pipefail;
 
             cd metasploit-framework;
-            mkdir tmp;
+            mkdir -p tmp;
             bundle exec ./msfconsole --quiet --no-database --resource ../metasploit-info/resources/extract_module_info.rc --execute-command 'quit';
 
             cd ..;
